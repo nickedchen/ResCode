@@ -10,7 +10,6 @@
 		46175FAD290BABCD00C1FB9F /* ResClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46175FAC290BABCD00C1FB9F /* ResClasses.swift */; };
 		46175FAF290BAC2100C1FB9F /* ResFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46175FAE290BAC2100C1FB9F /* ResFunctions.swift */; };
 		461B2FF8292EBAFD005681EB /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B2FF7292EBAFD005681EB /* HistoryDetailView.swift */; };
-		461B2FFA292ED9BA005681EB /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 461B2FF9292ED9BA005681EB /* Contents.json */; };
 		461B3002292EF5DE005681EB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461B3001292EF5DD005681EB /* WidgetKit.framework */; };
 		461B3004292EF5DE005681EB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461B3003292EF5DE005681EB /* SwiftUI.framework */; };
 		461B3007292EF5DE005681EB /* ResCodeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B3006292EF5DE005681EB /* ResCodeWidgetBundle.swift */; };
@@ -79,7 +78,6 @@
 		46175FAC290BABCD00C1FB9F /* ResClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResClasses.swift; sourceTree = "<group>"; };
 		46175FAE290BAC2100C1FB9F /* ResFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResFunctions.swift; sourceTree = "<group>"; };
 		461B2FF7292EBAFD005681EB /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
-		461B2FF9292ED9BA005681EB /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Contents.json; path = "../../../Downloads/SwiftUI-iOS14-CodeSamples/CarAssets.xcassets/Contents.json"; sourceTree = "<group>"; };
 		461B2FFF292EF5DC005681EB /* ResCodeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ResCodeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		461B3001292EF5DD005681EB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		461B3003292EF5DE005681EB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -203,7 +201,6 @@
 				46175FAE290BAC2100C1FB9F /* ResFunctions.swift */,
 				46C271C1291F78DC0064446C /* ResultView.swift */,
 				46F1B8622909BFC20068DC12 /* Assets.xcassets */,
-				461B2FF9292ED9BA005681EB /* Contents.json */,
 				46F1B8642909BFC20068DC12 /* Preview Content */,
 			);
 			path = ResCode;
@@ -379,7 +376,6 @@
 			files = (
 				46F1B8662909BFC20068DC12 /* Preview Assets.xcassets in Resources */,
 				46F1B8632909BFC20068DC12 /* Assets.xcassets in Resources */,
-				461B2FFA292ED9BA005681EB /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
