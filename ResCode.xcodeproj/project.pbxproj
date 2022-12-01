@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46175FAD290BABCD00C1FB9F /* ResClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46175FAC290BABCD00C1FB9F /* ResClasses.swift */; };
+		46175FAF290BAC2100C1FB9F /* ResFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46175FAE290BAC2100C1FB9F /* ResFunctions.swift */; };
+		461B2FF8292EBAFD005681EB /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B2FF7292EBAFD005681EB /* HistoryDetailView.swift */; };
+		461B2FFA292ED9BA005681EB /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 461B2FF9292ED9BA005681EB /* Contents.json */; };
+		461B3002292EF5DE005681EB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461B3001292EF5DD005681EB /* WidgetKit.framework */; };
+		461B3004292EF5DE005681EB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461B3003292EF5DE005681EB /* SwiftUI.framework */; };
+		461B3007292EF5DE005681EB /* ResCodeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B3006292EF5DE005681EB /* ResCodeWidgetBundle.swift */; };
+		461B3009292EF5DE005681EB /* ResCodeWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B3008292EF5DE005681EB /* ResCodeWidgetLiveActivity.swift */; };
+		461B300B292EF5DE005681EB /* ResCodeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B300A292EF5DE005681EB /* ResCodeWidget.swift */; };
+		461B300E292EF5E3005681EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461B300D292EF5E3005681EB /* Assets.xcassets */; };
+		461B3010292EF5E3005681EB /* ResCodeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 461B300C292EF5DE005681EB /* ResCodeWidget.intentdefinition */; };
+		461B3011292EF5E3005681EB /* ResCodeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 461B300C292EF5DE005681EB /* ResCodeWidget.intentdefinition */; };
+		461B3014292EF5E3005681EB /* ResCodeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 461B2FFF292EF5DC005681EB /* ResCodeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4627E7E5290A1EC000CB7C06 /* ResistorModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4627E7E3290A1EC000CB7C06 /* ResistorModel.xcdatamodeld */; };
+		4690DCA529139DC1005EE635 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4690DCA429139DC1005EE635 /* SheetView.swift */; };
+		4694BDE0292711930029CA42 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 4694BDDF292711930029CA42 /* Introspect */; };
+		46AA47C92914AF4C00C6DDC0 /* Resistance in Frameworks */ = {isa = PBXBuildFile; productRef = 46AA47C82914AF4C00C6DDC0 /* Resistance */; };
+		46C271C2291F78DC0064446C /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C271C1291F78DC0064446C /* ResultView.swift */; };
+		46C71D4B291F4961007B5E06 /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C71D4A291F4961007B5E06 /* ConverterView.swift */; };
 		46F1B85F2909BFC00068DC12 /* ResCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1B85E2909BFC00068DC12 /* ResCodeApp.swift */; };
 		46F1B8612909BFC00068DC12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1B8602909BFC00068DC12 /* ContentView.swift */; };
 		46F1B8632909BFC20068DC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F1B8622909BFC20068DC12 /* Assets.xcassets */; };
@@ -14,9 +33,18 @@
 		46F1B8702909BFC30068DC12 /* ResCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1B86F2909BFC30068DC12 /* ResCodeTests.swift */; };
 		46F1B87A2909BFC30068DC12 /* ResCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1B8792909BFC30068DC12 /* ResCodeUITests.swift */; };
 		46F1B87C2909BFC30068DC12 /* ResCodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1B87B2909BFC30068DC12 /* ResCodeUITestsLaunchTests.swift */; };
+		46F1B8892909D50D0068DC12 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1B8882909D50D0068DC12 /* CalculatorView.swift */; };
+		46F1B88B2909D5700068DC12 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1B88A2909D5700068DC12 /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		461B3012292EF5E3005681EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F1B8532909BFC00068DC12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 461B2FFE292EF5DC005681EB;
+			remoteInfo = ResCodeWidgetExtension;
+		};
 		46F1B86C2909BFC30068DC12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46F1B8532909BFC00068DC12 /* Project object */;
@@ -33,7 +61,38 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		461B3018292EF5E3005681EB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				461B3014292EF5E3005681EB /* ResCodeWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		46175FAC290BABCD00C1FB9F /* ResClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResClasses.swift; sourceTree = "<group>"; };
+		46175FAE290BAC2100C1FB9F /* ResFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResFunctions.swift; sourceTree = "<group>"; };
+		461B2FF7292EBAFD005681EB /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
+		461B2FF9292ED9BA005681EB /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Contents.json; path = "../../../Downloads/SwiftUI-iOS14-CodeSamples/CarAssets.xcassets/Contents.json"; sourceTree = "<group>"; };
+		461B2FFF292EF5DC005681EB /* ResCodeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ResCodeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		461B3001292EF5DD005681EB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		461B3003292EF5DE005681EB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		461B3006292EF5DE005681EB /* ResCodeWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResCodeWidgetBundle.swift; sourceTree = "<group>"; };
+		461B3008292EF5DE005681EB /* ResCodeWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResCodeWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		461B300A292EF5DE005681EB /* ResCodeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResCodeWidget.swift; sourceTree = "<group>"; };
+		461B300C292EF5DE005681EB /* ResCodeWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ResCodeWidget.intentdefinition; sourceTree = "<group>"; };
+		461B300D292EF5E3005681EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		461B300F292EF5E3005681EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4627E7E4290A1EC000CB7C06 /* ResistorModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ResistorModel.xcdatamodel; sourceTree = "<group>"; };
+		4690DCA429139DC1005EE635 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		46C271C1291F78DC0064446C /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		46C71D4A291F4961007B5E06 /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
 		46F1B85B2909BFC00068DC12 /* ResCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F1B85E2909BFC00068DC12 /* ResCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResCodeApp.swift; sourceTree = "<group>"; };
 		46F1B8602909BFC00068DC12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,13 +103,26 @@
 		46F1B8752909BFC30068DC12 /* ResCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F1B8792909BFC30068DC12 /* ResCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResCodeUITests.swift; sourceTree = "<group>"; };
 		46F1B87B2909BFC30068DC12 /* ResCodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResCodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		46F1B8882909D50D0068DC12 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		46F1B88A2909D5700068DC12 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		461B2FFC292EF5DC005681EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				461B3004292EF5DE005681EB /* SwiftUI.framework in Frameworks */,
+				461B3002292EF5DE005681EB /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46F1B8582909BFC00068DC12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4694BDE0292711930029CA42 /* Introspect in Frameworks */,
+				46AA47C92914AF4C00C6DDC0 /* Resistance in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,12 +143,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461B3000292EF5DD005681EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				461B3001292EF5DD005681EB /* WidgetKit.framework */,
+				461B3003292EF5DE005681EB /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		461B3005292EF5DE005681EB /* ResCodeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				461B3006292EF5DE005681EB /* ResCodeWidgetBundle.swift */,
+				461B3008292EF5DE005681EB /* ResCodeWidgetLiveActivity.swift */,
+				461B300A292EF5DE005681EB /* ResCodeWidget.swift */,
+				461B300C292EF5DE005681EB /* ResCodeWidget.intentdefinition */,
+				461B300D292EF5E3005681EB /* Assets.xcassets */,
+				461B300F292EF5E3005681EB /* Info.plist */,
+			);
+			path = ResCodeWidget;
+			sourceTree = "<group>";
+		};
 		46F1B8522909BFC00068DC12 = {
 			isa = PBXGroup;
 			children = (
+				4627E7E3290A1EC000CB7C06 /* ResistorModel.xcdatamodeld */,
 				46F1B85D2909BFC00068DC12 /* ResCode */,
 				46F1B86E2909BFC30068DC12 /* ResCodeTests */,
 				46F1B8782909BFC30068DC12 /* ResCodeUITests */,
+				461B3005292EF5DE005681EB /* ResCodeWidget */,
+				461B3000292EF5DD005681EB /* Frameworks */,
 				46F1B85C2909BFC00068DC12 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +184,7 @@
 				46F1B85B2909BFC00068DC12 /* ResCode.app */,
 				46F1B86B2909BFC30068DC12 /* ResCodeTests.xctest */,
 				46F1B8752909BFC30068DC12 /* ResCodeUITests.xctest */,
+				461B2FFF292EF5DC005681EB /* ResCodeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +194,16 @@
 			children = (
 				46F1B85E2909BFC00068DC12 /* ResCodeApp.swift */,
 				46F1B8602909BFC00068DC12 /* ContentView.swift */,
+				46F1B8882909D50D0068DC12 /* CalculatorView.swift */,
+				46F1B88A2909D5700068DC12 /* HistoryView.swift */,
+				461B2FF7292EBAFD005681EB /* HistoryDetailView.swift */,
+				46C71D4A291F4961007B5E06 /* ConverterView.swift */,
+				4690DCA429139DC1005EE635 /* SheetView.swift */,
+				46175FAC290BABCD00C1FB9F /* ResClasses.swift */,
+				46175FAE290BAC2100C1FB9F /* ResFunctions.swift */,
+				46C271C1291F78DC0064446C /* ResultView.swift */,
 				46F1B8622909BFC20068DC12 /* Assets.xcassets */,
+				461B2FF9292ED9BA005681EB /* Contents.json */,
 				46F1B8642909BFC20068DC12 /* Preview Content */,
 			);
 			path = ResCode;
@@ -130,6 +237,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		461B2FFE292EF5DC005681EB /* ResCodeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 461B3015292EF5E3005681EB /* Build configuration list for PBXNativeTarget "ResCodeWidgetExtension" */;
+			buildPhases = (
+				461B2FFB292EF5DC005681EB /* Sources */,
+				461B2FFC292EF5DC005681EB /* Frameworks */,
+				461B2FFD292EF5DC005681EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ResCodeWidgetExtension;
+			productName = ResCodeWidgetExtension;
+			productReference = 461B2FFF292EF5DC005681EB /* ResCodeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		46F1B85A2909BFC00068DC12 /* ResCode */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46F1B87F2909BFC30068DC12 /* Build configuration list for PBXNativeTarget "ResCode" */;
@@ -137,12 +261,18 @@
 				46F1B8572909BFC00068DC12 /* Sources */,
 				46F1B8582909BFC00068DC12 /* Frameworks */,
 				46F1B8592909BFC00068DC12 /* Resources */,
+				461B3018292EF5E3005681EB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				461B3013292EF5E3005681EB /* PBXTargetDependency */,
 			);
 			name = ResCode;
+			packageProductDependencies = (
+				46AA47C82914AF4C00C6DDC0 /* Resistance */,
+				4694BDDF292711930029CA42 /* Introspect */,
+			);
 			productName = ResCode;
 			productReference = 46F1B85B2909BFC00068DC12 /* ResCode.app */;
 			productType = "com.apple.product-type.application";
@@ -190,9 +320,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					461B2FFE292EF5DC005681EB = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					46F1B85A2909BFC00068DC12 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -215,6 +348,10 @@
 				Base,
 			);
 			mainGroup = 46F1B8522909BFC00068DC12;
+			packageReferences = (
+				46AA47C72914AF4C00C6DDC0 /* XCRemoteSwiftPackageReference "Resistance" */,
+				4694BDDE292711930029CA42 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = 46F1B85C2909BFC00068DC12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,17 +359,27 @@
 				46F1B85A2909BFC00068DC12 /* ResCode */,
 				46F1B86A2909BFC30068DC12 /* ResCodeTests */,
 				46F1B8742909BFC30068DC12 /* ResCodeUITests */,
+				461B2FFE292EF5DC005681EB /* ResCodeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		461B2FFD292EF5DC005681EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				461B300E292EF5E3005681EB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46F1B8592909BFC00068DC12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				46F1B8662909BFC20068DC12 /* Preview Assets.xcassets in Resources */,
 				46F1B8632909BFC20068DC12 /* Assets.xcassets in Resources */,
+				461B2FFA292ED9BA005681EB /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,11 +400,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		461B2FFB292EF5DC005681EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				461B3010292EF5E3005681EB /* ResCodeWidget.intentdefinition in Sources */,
+				461B3009292EF5DE005681EB /* ResCodeWidgetLiveActivity.swift in Sources */,
+				461B3007292EF5DE005681EB /* ResCodeWidgetBundle.swift in Sources */,
+				461B300B292EF5DE005681EB /* ResCodeWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46F1B8572909BFC00068DC12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				46F1B8612909BFC00068DC12 /* ContentView.swift in Sources */,
+				46F1B88B2909D5700068DC12 /* HistoryView.swift in Sources */,
+				46C71D4B291F4961007B5E06 /* ConverterView.swift in Sources */,
+				46175FAF290BAC2100C1FB9F /* ResFunctions.swift in Sources */,
+				461B2FF8292EBAFD005681EB /* HistoryDetailView.swift in Sources */,
+				4627E7E5290A1EC000CB7C06 /* ResistorModel.xcdatamodeld in Sources */,
+				46175FAD290BABCD00C1FB9F /* ResClasses.swift in Sources */,
+				46F1B8892909D50D0068DC12 /* CalculatorView.swift in Sources */,
+				461B3011292EF5E3005681EB /* ResCodeWidget.intentdefinition in Sources */,
+				46C271C2291F78DC0064446C /* ResultView.swift in Sources */,
+				4690DCA529139DC1005EE635 /* SheetView.swift in Sources */,
 				46F1B85F2909BFC00068DC12 /* ResCodeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +450,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		461B3013292EF5E3005681EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 461B2FFE292EF5DC005681EB /* ResCodeWidgetExtension */;
+			targetProxy = 461B3012292EF5E3005681EB /* PBXContainerItemProxy */;
+		};
 		46F1B86D2909BFC30068DC12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 46F1B85A2909BFC00068DC12 /* ResCode */;
@@ -295,6 +468,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		461B3016292EF5E3005681EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q3D2A44UH2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ResCodeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ResCodeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickedchen.ResCode.ResCodeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		461B3017292EF5E3005681EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q3D2A44UH2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ResCodeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ResCodeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickedchen.ResCode.ResCodeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		46F1B87D2909BFC30068DC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -412,6 +641,7 @@
 		46F1B8802909BFC30068DC12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -420,11 +650,12 @@
 				DEVELOPMENT_TEAM = Q3D2A44UH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ResCode;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,6 +672,7 @@
 		46F1B8812909BFC30068DC12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,11 +681,12 @@
 				DEVELOPMENT_TEAM = Q3D2A44UH2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ResCode;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,6 +779,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		461B3015292EF5E3005681EB /* Build configuration list for PBXNativeTarget "ResCodeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				461B3016292EF5E3005681EB /* Debug */,
+				461B3017292EF5E3005681EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		46F1B8562909BFC00068DC12 /* Build configuration list for PBXProject "ResCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -583,6 +825,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4694BDDE292711930029CA42 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+		46AA47C72914AF4C00C6DDC0 /* XCRemoteSwiftPackageReference "Resistance" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/8rightside/Resistance";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4694BDDF292711930029CA42 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4694BDDE292711930029CA42 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+		46AA47C82914AF4C00C6DDC0 /* Resistance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46AA47C72914AF4C00C6DDC0 /* XCRemoteSwiftPackageReference "Resistance" */;
+			productName = Resistance;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4627E7E3290A1EC000CB7C06 /* ResistorModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4627E7E4290A1EC000CB7C06 /* ResistorModel.xcdatamodel */,
+			);
+			currentVersion = 4627E7E4290A1EC000CB7C06 /* ResistorModel.xcdatamodel */;
+			path = ResistorModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 46F1B8532909BFC00068DC12 /* Project object */;
 }

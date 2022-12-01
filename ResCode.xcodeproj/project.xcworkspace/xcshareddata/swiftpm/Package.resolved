@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "resistance",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/8rightside/Resistance",
+      "state" : {
+        "revision" : "660083f286417efbf4bbd823a68d98cddbef9b9b",
+        "version" : "2.2.1"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
+      "state" : {
+        "revision" : "f2616860a41f9d9932da412a8978fec79c06fe24",
+        "version" : "0.1.4"
+      }
+    }
+  ],
+  "version" : 2
+}

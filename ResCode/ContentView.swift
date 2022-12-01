@@ -7,15 +7,48 @@
 
 import SwiftUI
 
+fileprivate
+let tabColors = [
+    Color.accentColor,
+    Color("EasternBlue"),
+    Color.gray,
+]
+
 struct ContentView: View {
+    @State private var selectedIndex: Int = 0
+    @State var tabSelection = 0
+    @State private var tabColor: Color!
+    
+    init() {
+           self.tabColor = tabColors[0]
+       }
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView(selection: $selectedIndex){
+            CalculatorView()
+                .tabItem{
+                    Label("Decoder",systemImage: "lines.measurement.horizontal")
+                }
+                .tag(0)
+                .onAppear(perform: { tabColor = tabColors[0] })
+    
+            ConverterView(resistorData: ResistorData(resistance: "", selectedType: "4", coefficient: "", tolerance: ""))
+                .tabItem{
+                    Label("Converter",systemImage: "arrow.2.squarepath")
+                }
+                .tag(1)
+                .onAppear(perform: { tabColor = tabColors[1] })
+            
+            HistoryView()
+                .tabItem{
+                    Label("LabBook",systemImage: "list.clipboard")
+                }
+                .tag(2)
+                .onAppear(perform: { tabColor = tabColors[2] })
+            
         }
-        .padding()
+        .accentColor(tabColor ?? tabColors[0])
+        .font(.headline)
     }
 }
 
