@@ -2,7 +2,7 @@
 
 A resistance calculator app built using SwiftUI.
 
-## Sample ScreenShots
+## Sample Screenshots
 
 <p float="middle">
 <img src="https://user-images.githubusercontent.com/88886207/205181116-a7da09da-951f-4039-8da2-9580bd42553a.png" width="200"/>
