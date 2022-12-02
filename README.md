@@ -1,3 +1,7 @@
+<picture>
+  <img src="https://user-images.githubusercontent.com/88886207/205191623-0f467588-070d-418f-884b-8ca134fc1d6b.png" alt="ResCode logo" height="70">
+</picture>
+
 # ResCode
 
 A resistance calculator app built using SwiftUI.
