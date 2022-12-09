@@ -4,9 +4,15 @@
 
 # ResCode
 
-A resistance calculator app built using SwiftUI.
+A Resistance Calculator app built using SwiftUI.
 
-## Sample Screenshots
+Currently support from four to six banded resistors. Based on the Swift library [Resistance](https://github.com/8rightside/Resistance).
+
+<p>
+<img src="https://user-images.githubusercontent.com/88886207/206603469-78e48ad2-8633-461c-a205-69af586a476a.gif" width="200"/>
+</p>
+
+## Screenshots
 
 <p float="middle">
 <img src="https://user-images.githubusercontent.com/88886207/205181116-a7da09da-951f-4039-8da2-9580bd42553a.png" width="200"/>
