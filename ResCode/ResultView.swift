@@ -27,7 +27,7 @@ struct ResultView: View {
             List {
                 Section(header:
                     VStack(alignment: .leading) {
-                        Text("Your Configuration").font(.title2).bold()
+                        Text("Your Configuration").font(.title).bold()
                         Text("Four Band Resistor").font(.headline)
                             .fontWeight(.regular)
                             .opacity(0.5)
@@ -37,13 +37,14 @@ struct ResultView: View {
                         HStack {
                             Spacer().frame(width: 20.0)
                             ForEach(configs) { config in
+  
                                 GroupBox(
                                     label:
                                     HStack {
                                         Text(config.title)
                                             .foregroundColor(Color("EasternBlue"))
                                             .fontWeight(.bold)
-                                            .font(.title3)
+                                            .font(.headline)
                                         Spacer()
                                     }
                                 ) {
@@ -53,12 +54,12 @@ struct ResultView: View {
                                         Text(String(format: "%.1f", config.value))
                                             .font(.largeTitle)
                                             .fontWeight(.heavy)
-                                            .foregroundColor(Color("EasternBlue")).opacity(0.8)
+                                            .foregroundColor(Color("EasternBlue")).opacity(0.5)
                                     }
                                 }
-                                .frame(width: 160, height: 150)
+                                .frame(width: 140, height: 130)
                                 .groupBoxStyle(ColoredGroupBox())
-                                .padding(.all, 0.1)
+                                
                             }
                             Spacer().frame(width: 20.0)
                         }
@@ -76,35 +77,44 @@ struct ResultView: View {
                         Text("Coloured Code").font(.title2).bold()
                     }
                 ) {
-                    GroupBox {
-                        VStack {
-                            Spacer()
-                            HStack(spacing: 10) {
-                                ForEach(0 ..< 4) { _ in
-                                    VStack {
-                                        RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                            .fill(Color("EasternBlue"))
-                                            .frame(height: 220)
-                                            .padding(.all, 0.1)
-                                        Spacer()
-                                        Text("Blue")
-                                            .foregroundColor(Color("EasternBlue"))
-                                            .fontWeight(.medium)
-                                    }
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .fill(Color("EasternBlue")).opacity(0.1)
+                        HStack(spacing: 12) {
+                            ForEach(0 ..< 4) { _ in
+                                VStack {
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(Color("EasternBlue"))
+                                        .frame(width:78,height: 150)
                                 }
                             }
                         }
+                        .padding(.all)
                     }
-                    .groupBoxStyle(ColoredGroupBox())
+                    
+                    
                 }
                 .listRowSeparator(.hidden)
                 .headerProminence(.increased)
                 .listRowBackground(Color("Clear"))
+                
+                Section(){
+                    ZStack{
+                        Text("Hello")
+                        Text("Hello")
+                        Text("Hello")
+                        
+                    }
+                }
+                .listRowSeparator(.hidden)
+                .headerProminence(.increased)
+                .listRowBackground(Color("Clear"))
+                
             }
             .scrollContentBackground(.hidden)
             .listStyle(.grouped)
             .navigationTitle("Result")
-            
+
             NavigationLink(destination: HistoryView()) {
                 ZStack {
                     Rectangle()

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-var name = "Resistor 1"
-var description = "The resistor has 4 bands, green purple blue and yellow"
+var name = "Four banded Resistor"
+var description = "The resistor has a value of 220Ω, with a tolerance up to 0.5%. \n \nBand Colour from left to right: Green, Purple, Blue and Yellow"
 var isvalid: Bool = true
 
 struct HistoryDetailView: View {
@@ -22,21 +22,33 @@ struct HistoryDetailView: View {
                         .aspectRatio(contentMode: .fit)
                         .padding()
                     
-                    Text(name)
-                        .font(.headline)
+                    HStack{
+                        Text(name)
+                            .font(.headline)
+                        Spacer()
+                        ZStack{
+                            Capsule()
+                                .fill(Color("AccentColor"))
+                                .frame(width: 100,height: 30)
+                            Text("Decoded")
+                                .font(.callout).bold()
+                                .foregroundColor(.white)
+                        }
+                    }
                     
                     Text(description)
                         .font(.body)
                     
                     HStack {
-                        Text("Hybrid").font(.headline)
+                        Text("Valid Resistor").font(.headline)
                         Spacer()
                         Image(systemName: isvalid ?
-                              "checkmark.circle" : "xmark.circle" )
+                              "checkmark.circle.fill" : "xmark.circle.fill" )
+                        .foregroundColor(Color.blue)
                     }
                 }
             }
-            .navigationTitle("Details")
+            .navigationTitle("Resistor")
         }
     }
 }

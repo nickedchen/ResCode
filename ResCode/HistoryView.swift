@@ -26,7 +26,7 @@ struct HistoryView: View {
             List {
                 Section(header:
                     VStack(alignment: .leading) {
-                    Text("Decoder Logs").font(.title2).bold().foregroundColor(.secondary)
+                    Text("Decoder Logs").font(.title2).bold().foregroundColor(.primary)
                     }
                 ){
                     ForEach(ResistorNames, id: \.self) { title in
@@ -42,7 +42,7 @@ struct HistoryView: View {
                 
                 Section(header:
                     VStack(alignment: .leading) {
-                        Text("Converter Logs").font(.title2).bold().foregroundColor(.secondary)
+                        Text("Converter Logs").font(.title2).bold().foregroundColor(.primary)
                     }
                 ){
                     ForEach(ResistorNames, id: \.self) { title in

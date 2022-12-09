@@ -12,11 +12,17 @@ let url = "https://www.apple.com"
 
 extension UIPickerView {
     override open var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 200)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 240)
     }
 }
 
 struct CalculatorView: View {
+    
+    // Animations
+    let typeAnimation: Animation = .easeInOut(duration: 0.22222)
+    let viewAnimation: Animation = .easeInOut(duration: 0.16666)
+    let viewtransistion: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing))
+
     // State variables
     @State private var showingSheet = false
     @State private var action = false
@@ -37,6 +43,9 @@ struct CalculatorView: View {
     @State var resistorTolerance = "2"
     @State var resistorTolerancePercentage = "5"
     @State var temperatureCoefficient = "10"
+    
+    // Apperance variant
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         NavigationStack {
@@ -44,254 +53,260 @@ struct CalculatorView: View {
                 ScrollView {
                     VStack {
                         Spacer()
-                        GroupBox(
-                        ) {
-                            switch selectedType {
-                            case "5":
-
-                                HStack(spacing: 7) {
-                                    Picker("Choose a color", selection: $digit1) {
-                                        ForEach(digitValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.body)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: digit1))
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                .fill(colorScheme == .dark ? Color("containerColor").opacity(0.5) : Color("AccentColor").opacity(0.5))
+                            VStack{
+                                switch selectedType {
+                                case "5":
+                                    HStack(spacing: 10) {
+                                        Picker("Choose a color", selection: $digit1) {
+                                            ForEach(digitValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.body)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: digit1))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 6.7, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: digit1))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 6.7, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: digit1))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $digit2) {
-                                        ForEach(digitValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.body)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: digit2))
+                                        Picker("Choose a color", selection: $digit2) {
+                                            ForEach(digitValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.body)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: digit2))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 6.7, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: digit2))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 6.7, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: digit2))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $digit3) {
-                                        ForEach(digitValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.body)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: digit3))
+                                        Picker("Choose a color", selection: $digit3) {
+                                            ForEach(digitValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.body)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: digit3))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 6.7, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: digit3))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 6.7, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: digit3))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $multiplier) {
-                                        ForEach(multiplierValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.body)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: multiplier))
+                                        Picker("Choose a color", selection: $multiplier) {
+                                            ForEach(multiplierValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.body)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: multiplier))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 6.7, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: multiplier))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 6.7, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: multiplier))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $tolerance) {
-                                        ForEach(toleranceValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.body)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: tolerance))
+                                        Picker("Choose a color", selection: $tolerance) {
+                                            ForEach(toleranceValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.body)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: tolerance))
+                                            }
                                         }
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 6.7, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: tolerance))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                     }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 6.7, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: tolerance))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                                }
+                                
 
-                            case "6":
-                                HStack(spacing: 6) {
-                                    Picker("Choose a color", selection: $digit1) {
-                                        ForEach(digitValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: digit1))
+                                case "6":
+                                    HStack(spacing: 6) {
+                                        Picker("Choose a color", selection: $digit1) {
+                                            ForEach(digitValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: digit1))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 7.8, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: digit1))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 7.8, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: digit1))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $digit2) {
-                                        ForEach(digitValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: digit2))
+                                        Picker("Choose a color", selection: $digit2) {
+                                            ForEach(digitValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: digit2))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 7.8, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: digit2))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 7.8, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: digit2))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $digit3) {
-                                        ForEach(digitValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: digit3))
+                                        Picker("Choose a color", selection: $digit3) {
+                                            ForEach(digitValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: digit3))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 7.8, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: digit3))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 7.8, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: digit3))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $multiplier) {
-                                        ForEach(multiplierValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: multiplier))
+                                        Picker("Choose a color", selection: $multiplier) {
+                                            ForEach(multiplierValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: multiplier))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 7.8, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: multiplier))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 7.8, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: multiplier))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $tolerance) {
-                                        ForEach(toleranceValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: tolerance))
+                                        Picker("Choose a color", selection: $tolerance) {
+                                            ForEach(toleranceValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: tolerance))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 7.8, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: tolerance))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 7.8, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: tolerance))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-                                    Picker("Choose a color", selection: $coefficient) {
-                                        ForEach(coeffiecientValue, id: \.self) {
-                                            Text(colorToText(input: $0).prefix(2).uppercased())
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: coefficient))
+                                        Picker("Choose a color", selection: $coefficient) {
+                                            ForEach(coeffiecientValue, id: \.self) {
+                                                Text(colorToText(input: $0).prefix(2).uppercased())
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: coefficient))
+                                            }
                                         }
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 7.8, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: coefficient))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                     }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 7.8, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: coefficient))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                }
+                                    
 
-                            default:
-                                HStack(spacing: 10) {
-                                    Picker("Choose a color", selection: $digit1) {
-                                        ForEach(digitValue, id: \.self) {
-                                            Text(colorToText(input: $0))
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: digit1))
-                                                .frame(height: 50)
+                                default:
+                                    HStack(spacing: 14) {
+                                        Picker("Choose a color", selection: $digit1) {
+                                            ForEach(digitValue, id: \.self) {
+                                                Text(colorToText(input: $0))
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: digit1))
+                                                    .frame(height: 50)
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 5.4, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: digit1))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 5.4, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: digit1))
+                                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-                                    Picker("Choose a color", selection: $digit2) {
-                                        ForEach(digitValue, id: \.self) {
-                                            Text(colorToText(input: $0))
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: digit2))
+                                        Picker("Choose a color", selection: $digit2) {
+                                            ForEach(digitValue, id: \.self) {
+                                                Text(colorToText(input: $0))
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: digit2))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 5.4, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: digit2))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 5.4, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: digit2))
+                                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-                                    Picker("Choose a color", selection: $multiplier) {
-                                        ForEach(multiplierValue, id: \.self) {
-                                            Text(colorToText(input: $0))
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: multiplier))
+                                        Picker("Choose a color", selection: $multiplier) {
+                                            ForEach(multiplierValue, id: \.self) {
+                                                Text(colorToText(input: $0))
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: multiplier))
+                                            }
                                         }
-                                    }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 5.4, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: multiplier))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 5.4, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: multiplier))
+                                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-                                    Picker("Choose a color", selection: $tolerance) {
-                                        ForEach(toleranceValue, id: \.self) {
-                                            Text(colorToText(input: $0))
-                                                .font(.callout)
-                                                .fontWeight(.bold)
-                                                .foregroundColor(changeFontColor(input: tolerance))
+                                        Picker("Choose a color", selection: $tolerance) {
+                                            ForEach(toleranceValue, id: \.self) {
+                                                Text(colorToText(input: $0))
+                                                    .font(.callout)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(changeFontColor(input: tolerance))
+                                            }
                                         }
+                                        .pickerStyle(.wheel)
+                                        .frame(width: geometry.size.width / 5.4, height: 240, alignment: .center)
+                                        .compositingGroup()
+                                        .clipped()
+                                        .background(changeColor(input: tolerance))
+                                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                                     }
-                                    .pickerStyle(.wheel)
-                                    .frame(width: geometry.size.width / 5.4, height: 250, alignment: .center)
-                                    .compositingGroup()
-                                    .clipped()
-                                    .background(changeColor(input: tolerance))
-                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                                 }
                             }
+                            .padding(.all)
+                            .animation(typeAnimation, value: selectedType)
                         }
-                        .groupBoxStyle(ColoredGroupBox())
                         .padding(.bottom, 10.0)
 
                         HStack {
-                            GroupBox(label: Label("Resistance",systemImage: "equal")
+                            GroupBox(label: Label("Resistance", systemImage: "equal")
                                 .foregroundColor(.blue)) {
                                     HStack {
                                         ValueView(value: returnResistance(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0), unit: "Ω")
+                                            .animation(viewAnimation, value: returnResistance(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0))
                                         Spacer()
                                     }
                                 }
@@ -314,8 +329,10 @@ struct CalculatorView: View {
                                 .foregroundColor(.red)) {
                                     HStack {
                                         ValueView(value: returnTolerance(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0), unit: "Ω")
+                                            .animation(viewAnimation, value: returnTolerance(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0))
                                         Text("/").font(.system(size: 14, weight: .semibold, design: .rounded)).foregroundColor(.secondary)
                                         ValueView(value: returnTolerance(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0) * 100, unit: "%")
+                                            .animation(viewAnimation, value: returnTolerance(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0) * 100)
                                         Spacer()
                                     }
                                 }
@@ -334,21 +351,22 @@ struct CalculatorView: View {
                         }
                         .padding(.vertical, 1)
 
-                        GroupBox(label: Label("Temperature Coefficient",systemImage: "thermometer.high")
+                        GroupBox(label: Label("Temperature Coefficient", systemImage: "thermometer.high")
                             .foregroundColor(.orange)
-                            ) {
-                                HStack {
-                                    ValueView(value: returnCoefficient(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0), unit: "ppm/k")
-                                    Spacer()
-                                }
+                        ) {
+                            HStack {
+                                ValueView(value: returnCoefficient(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0), unit: "ppm/k")
+                                    .animation(viewAnimation, value: returnCoefficient(digit1: digit1, digit2: digit2, digit3: digit3, multiplier: multiplier, tolerance: tolerance, coefficient: coefficient, numofbands: Int(selectedType) ?? 0))
+                                Spacer()
                             }
-                            .contextMenu {
-                                Button {
-                                    UIPasteboard.general.setValue(temperatureCoefficient, forPasteboardType: "public.plain-text")
-                                } label: {
-                                    Label("Copy Temperature Coefficient", systemImage: "doc.on.doc")
-                                }
+                        }
+                        .contextMenu {
+                            Button {
+                                UIPasteboard.general.setValue(temperatureCoefficient, forPasteboardType: "public.plain-text")
+                            } label: {
+                                Label("Copy Temperature Coefficient", systemImage: "doc.on.doc")
                             }
+                        }
 
                         GroupBox(label: Text("Configure Resistor")
                             .foregroundColor(Color("dynamicFontColor"))) {
@@ -363,9 +381,10 @@ struct CalculatorView: View {
                     .padding(.horizontal)
                 }
             }
+            .scrollDisabled(true)
             .navigationBarTitle("Decoder")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Menu {
                         Button(role: .destructive, action: {
                             digit1 = .white
@@ -412,8 +431,8 @@ struct CalculatorView: View {
                     }
                 }
             }
-            
-            NavigationLink(destination: HistoryView()) {
+
+            NavigationLink(destination: HistoryDetailView()) {
                 ZStack {
                     Rectangle()
                         .fill(Color("containerColor"))
@@ -467,25 +486,6 @@ struct ValueView: View {
 struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
         CalculatorView()
-    }
-}
-
-struct ColoredGroupBox: GroupBoxStyle {
-    @Environment(\.colorScheme) var colorScheme
-    func makeBody(configuration: Configuration) -> some View {
-        VStack {
-            HStack {
-                configuration.label
-                    .font(.headline)
-                Spacer()
-            }
-
-            configuration.content
-        }
-        .padding()
-        .background(RoundedRectangle(cornerRadius: 15, style: .continuous)
-            .fill(colorScheme == .dark ? Color("AccentColor").opacity(0.9) : Color("AccentColor").opacity(0.5))
-        )
     }
 }
 

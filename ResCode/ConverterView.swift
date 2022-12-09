@@ -39,7 +39,10 @@ struct ConverterView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                GroupBox{
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10,style: .continuous)
+                        .fill(Color("SeaGreen"))
+                    
                     HStack{
                         VStack{
                             HStack{
@@ -67,9 +70,9 @@ struct ConverterView: View {
                             .foregroundColor(.white)
                             .padding(.leading)
                     }
+                    .padding(.all)
                 }
                 .padding(.horizontal)
-                .groupBoxStyle(ConverterGroupBox())
                 
                 GroupBox(
                     label: Text("Resistance (Ω)")
@@ -186,7 +189,7 @@ struct ConverterGroupBox: GroupBoxStyle {
             configuration.content
         }
         .padding()
-        .background(RoundedRectangle(cornerRadius: 8, style: .continuous)
+        .background(RoundedRectangle(cornerRadius: 20, style: .continuous)
             .fill(Color("SeaGreen")))
     }
 }
