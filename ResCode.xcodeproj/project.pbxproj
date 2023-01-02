@@ -20,9 +20,11 @@
 		461B3011292EF5E3005681EB /* ResCodeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 461B300C292EF5DE005681EB /* ResCodeWidget.intentdefinition */; };
 		461B3014292EF5E3005681EB /* ResCodeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 461B2FFF292EF5DC005681EB /* ResCodeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4627E7E5290A1EC000CB7C06 /* ResistorModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4627E7E3290A1EC000CB7C06 /* ResistorModel.xcdatamodeld */; };
+		4663350A294E9AC6005F0759 /* SegmentedPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 46633509294E9AC6005F0759 /* SegmentedPicker */; };
 		4690DCA529139DC1005EE635 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4690DCA429139DC1005EE635 /* SheetView.swift */; };
 		4694BDE0292711930029CA42 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 4694BDDF292711930029CA42 /* Introspect */; };
 		46AA47C92914AF4C00C6DDC0 /* Resistance in Frameworks */ = {isa = PBXBuildFile; productRef = 46AA47C82914AF4C00C6DDC0 /* Resistance */; };
+		46C161922944639F009429C9 /* DecoderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C161912944639F009429C9 /* DecoderView.swift */; };
 		46C271C2291F78DC0064446C /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C271C1291F78DC0064446C /* ResultView.swift */; };
 		46C71D4B291F4961007B5E06 /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C71D4A291F4961007B5E06 /* ConverterView.swift */; };
 		46F1B85F2909BFC00068DC12 /* ResCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1B85E2909BFC00068DC12 /* ResCodeApp.swift */; };
@@ -89,6 +91,8 @@
 		461B300F292EF5E3005681EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4627E7E4290A1EC000CB7C06 /* ResistorModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ResistorModel.xcdatamodel; sourceTree = "<group>"; };
 		4690DCA429139DC1005EE635 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		46BA8AB1294E99EC00D6B540 /* SegmentedPicker */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SegmentedPicker; sourceTree = "<group>"; };
+		46C161912944639F009429C9 /* DecoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderView.swift; sourceTree = "<group>"; };
 		46C271C1291F78DC0064446C /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		46C71D4A291F4961007B5E06 /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterView.swift; sourceTree = "<group>"; };
 		46F1B85B2909BFC00068DC12 /* ResCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,7 @@
 			files = (
 				4694BDE0292711930029CA42 /* Introspect in Frameworks */,
 				46AA47C92914AF4C00C6DDC0 /* Resistance in Frameworks */,
+				4663350A294E9AC6005F0759 /* SegmentedPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +149,7 @@
 		461B3000292EF5DD005681EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46BA8AB1294E99EC00D6B540 /* SegmentedPicker */,
 				461B3001292EF5DD005681EB /* WidgetKit.framework */,
 				461B3003292EF5DE005681EB /* SwiftUI.framework */,
 			);
@@ -191,14 +197,15 @@
 			isa = PBXGroup;
 			children = (
 				46F1B85E2909BFC00068DC12 /* ResCodeApp.swift */,
-				46F1B8602909BFC00068DC12 /* ContentView.swift */,
+				46175FAE290BAC2100C1FB9F /* ResFunctions.swift */,
+				46175FAC290BABCD00C1FB9F /* ResClasses.swift */,
 				46F1B8882909D50D0068DC12 /* CalculatorView.swift */,
 				46F1B88A2909D5700068DC12 /* HistoryView.swift */,
+				46F1B8602909BFC00068DC12 /* ContentView.swift */,
+				46C161912944639F009429C9 /* DecoderView.swift */,
 				461B2FF7292EBAFD005681EB /* HistoryDetailView.swift */,
 				46C71D4A291F4961007B5E06 /* ConverterView.swift */,
 				4690DCA429139DC1005EE635 /* SheetView.swift */,
-				46175FAC290BABCD00C1FB9F /* ResClasses.swift */,
-				46175FAE290BAC2100C1FB9F /* ResFunctions.swift */,
 				46C271C1291F78DC0064446C /* ResultView.swift */,
 				46F1B8622909BFC20068DC12 /* Assets.xcassets */,
 				46F1B8642909BFC20068DC12 /* Preview Content */,
@@ -269,6 +276,7 @@
 			packageProductDependencies = (
 				46AA47C82914AF4C00C6DDC0 /* Resistance */,
 				4694BDDF292711930029CA42 /* Introspect */,
+				46633509294E9AC6005F0759 /* SegmentedPicker */,
 			);
 			productName = ResCode;
 			productReference = 46F1B85B2909BFC00068DC12 /* ResCode.app */;
@@ -417,6 +425,7 @@
 				46175FAF290BAC2100C1FB9F /* ResFunctions.swift in Sources */,
 				461B2FF8292EBAFD005681EB /* HistoryDetailView.swift in Sources */,
 				4627E7E5290A1EC000CB7C06 /* ResistorModel.xcdatamodeld in Sources */,
+				46C161922944639F009429C9 /* DecoderView.swift in Sources */,
 				46175FAD290BABCD00C1FB9F /* ResClasses.swift in Sources */,
 				46F1B8892909D50D0068DC12 /* CalculatorView.swift in Sources */,
 				461B3011292EF5E3005681EB /* ResCodeWidget.intentdefinition in Sources */,
@@ -842,6 +851,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		46633509294E9AC6005F0759 /* SegmentedPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SegmentedPicker;
+		};
 		4694BDDF292711930029CA42 /* Introspect */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4694BDDE292711930029CA42 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;

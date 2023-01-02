@@ -8,7 +8,7 @@
 import SwiftUI
 
 fileprivate
-let tabColors = [
+let tabColors: [Color] = [
     Color.accentColor,
     Color("EasternBlue"),
     Color.gray,
@@ -16,7 +16,7 @@ let tabColors = [
 
 struct ContentView: View {
     @State private var selectedIndex: Int = 0
-    @State var tabSelection = 0
+    @State var tabSelection: Int = 0
     @State private var tabColor: Color!
     
     init() {
@@ -25,7 +25,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selectedIndex){
-            CalculatorView()
+            DecoderView()
                 .tabItem{
                     Label("Decoder",systemImage: "lines.measurement.horizontal")
                 }

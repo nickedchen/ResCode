@@ -98,36 +98,25 @@ struct ResultView: View {
                 .headerProminence(.increased)
                 .listRowBackground(Color("Clear"))
                 
-                Section(){
-                    ZStack{
-                        Text("Hello")
-                        Text("Hello")
-                        Text("Hello")
-                        
-                    }
-                }
-                .listRowSeparator(.hidden)
-                .headerProminence(.increased)
-                .listRowBackground(Color("Clear"))
-                
             }
             .scrollContentBackground(.hidden)
             .listStyle(.grouped)
             .navigationTitle("Result")
-
+            
             NavigationLink(destination: HistoryView()) {
                 ZStack {
-                    Rectangle()
-                        .fill(Color("EasternBlue"))
-                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                        .frame(height: 52)
+                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                        .fill(Color("ConverterBackground"))
+                        .frame(height: 67)
                         .padding(.horizontal)
                     Text("Log Result")
-                        .font(.headline)
-                        .foregroundColor(.white)
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(Color("ConverterText"))
                 }
             }
             .padding(.bottom)
+            .navigationTitle("Converter")
         }
     }
 

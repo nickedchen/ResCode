@@ -16,7 +16,6 @@ let coeffiecientValue: [Coefficient] = [.brown, .red, .orange, .yellow, .blue, .
 
 let resistorTypes = ["4", "5", "6"]
 
-
 struct ColorType: Identifiable {
     
     var name: String

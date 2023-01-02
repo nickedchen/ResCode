@@ -12,6 +12,8 @@ struct ConverterView: View {
     
     @ObservedObject var resistorData : ResistorData
     
+    
+    var resistancePlaceholer = "Enter resistor value"
     var tolerancePlaceholder = "Choose tolerance value"
     var TCRPlaceholder = "Choose temperature coefficient value"
     var toleranceDropDownList = [
@@ -40,107 +42,155 @@ struct ConverterView: View {
         NavigationStack {
             ScrollView {
                 ZStack{
-                    RoundedRectangle(cornerRadius: 10,style: .continuous)
-                        .fill(Color("SeaGreen"))
+                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                        .fill(Color("EasternBlue"))
                     
                     HStack{
                         VStack{
                             HStack{
                                 Text("Convert value into colour bands")
                                     .foregroundColor(.white)
-                                    .font(.headline)
+                                    .font(.system(size: 16))
                                     .fontWeight(.bold)
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                             }
-                            Spacer()
+                            Spacer().frame(height: 5)
                             HStack{
                                 Text("Select resistor values below and number of bands to visualize your resistor code")
                                     .foregroundColor(.white)
-                                    .font(.subheadline)
-                                    .fontWeight(.regular)
+                                    .font(.custom("SF Compact Display", size: 14))
+                                    .fontWeight(.bold)
                                     .multilineTextAlignment(.leading)
                                 
                                 Spacer()
                             }
                         }
-                        Image(systemName: "rectangle.and.hand.point.up.left")
+                        Image(systemName: "textformat.123")
                             .resizable()
-                            .frame(width: 45,height: 45)
+                            .frame(width: 56,height:28)
                             .foregroundColor(.white)
-                            .padding(.leading)
+                        Spacer()
                     }
                     .padding(.all)
                 }
+                .frame(height: 94)
                 .padding(.horizontal)
                 
-                GroupBox(
-                    label: Text("Resistance (Ω)")
-                    .foregroundColor(Color("EasternBlue"))
-                ) {
-                    Section {
-                        TextField("Enter Value Here", text: $resistorData.resistance)
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                        .fill(Color("ConverterBackground"))
+                        .opacity(0.57)
+                    VStack{
+                        HStack{
+                            VStack(alignment: .leading){
+                                Text("Resistance")
+                                    .foregroundColor(Color("ConverterText"))
+                                    .font(.system(size: 20))
+                                    .bold()
+                                TextField("Enter Value Here", text: $resistorData.resistance)
+                                    .foregroundColor(Color("ConverterText2"))
+                                    .font(.system(size: 15))
+                                    .bold()
+                                   
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        
                     }
                 }
+                .frame(height: 94)
                 .padding(.horizontal)
                 .padding(.top)
                 
-
-                GroupBox(label: Text("Tolerance (%)")
-                    .foregroundColor(Color("EasternBlue"))) {
-                    Section {
-                        Menu {
-                            ForEach(toleranceDropDownList, id: \.self) { tolerance in
-                                Button(tolerance) {
-                                    self.resistorData.tolerance = tolerance
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                        .fill(Color("ConverterBackground"))
+                        .opacity(0.57)
+                    VStack{
+                        HStack{
+                            VStack(alignment: .leading){
+                                Text("Tolerance")
+                                    .foregroundColor(Color("ConverterText"))
+                                    .font(.system(size: 20))
+                                    .bold()
+                                Menu {
+                                    ForEach(toleranceDropDownList, id: \.self) { tolerance in
+                                        Button(tolerance) {
+                                            self.resistorData.tolerance = tolerance
+                                        }
+                                    }
+                                } label: {
+                                    VStack(spacing: 5) {
+                                        HStack {
+                                            Text(resistorData.tolerance.isEmpty ?
+                                                 tolerancePlaceholder : resistorData.tolerance)
+                                            .foregroundColor(resistorData.tolerance.isEmpty ? Color("ConverterText2").opacity(0.5) : .black)
+                                                .font(.system(size: 15))
+                                                .bold()
+                                            Spacer()
+                                            Image(systemName: "chevron.right")
+                                                .foregroundColor(Color("EasternBlue"))
+                                                .font(Font.system(size: 20, weight: .bold))
+                                        }
+                                        
+                                    }
                                 }
-                            }
-                        } label: {
-                            VStack(spacing: 5) {
-                                HStack {
-                                    Text(resistorData.tolerance.isEmpty ?
-                                         tolerancePlaceholder : resistorData.tolerance)
-                                        .foregroundColor(resistorData.tolerance.isEmpty ? .gray.opacity(0.5) : .black)
-                                    Spacer()
-                                    Image(systemName: "chevron.down")
-                                        .foregroundColor(Color("EasternBlue"))
-                                        .font(Font.system(size: 20, weight: .bold))
-                                }
-                                
+                                   
                             }
                         }
+                        .padding()
+                        
                     }
                 }
+                .frame(height: 94)
                 .padding(.horizontal)
                 .padding(.top)
                 
-
-                GroupBox(label: Text("Temperature Coefficient (ppm/K)")) {
-                    Section {
-                        Menu {
-                            ForEach(TCRDropDownList, id: \.self) { coefficient in
-                                Button(coefficient) {
-                                    resistorData.coefficient = coefficient
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                        .fill(Color("ConverterBackground"))
+                        .opacity(0.57)
+                    VStack{
+                        HStack{
+                            VStack(alignment: .leading){
+                                Text("Temperature Coefficient")
+                                    .foregroundColor(Color("ConverterText"))
+                                    .font(.system(size: 20))
+                                    .bold()
+                                Menu {
+                                    ForEach(TCRDropDownList, id: \.self) { coefficient in
+                                        Button(coefficient) {
+                                            resistorData.coefficient = coefficient
+                                        }
+                                    }
+                                } label: {
+                                    VStack(spacing: 5) {
+                                        HStack {
+                                            Text(resistorData.coefficient.isEmpty ? TCRPlaceholder : resistorData.coefficient)
+                                                .foregroundColor(resistorData.coefficient.isEmpty ? Color("ConverterText2").opacity(0.5) : .black)
+                                                .font(.system(size: 15))
+                                                .bold()
+                                            Spacer()
+                                            Image(systemName: "chevron.right")
+                                                .foregroundColor(Color("EasternBlue"))
+                                                .font(Font.system(size: 20, weight: .bold))
+                                        }
+                                        
+                                    }
                                 }
-                            }
-                        } label: {
-                            VStack(spacing: 5) {
-                                HStack {
-                                    Text(resistorData.coefficient.isEmpty ? TCRPlaceholder : resistorData.coefficient)
-                                        .foregroundColor(resistorData.coefficient.isEmpty ? .gray.opacity(0.5) : .black)
-                                    Spacer()
-                                    Image(systemName: "chevron.down")
-                                        .foregroundColor(Color("EasternBlue"))
-                                        .font(Font.system(size: 20, weight: .bold))
-                                }
-                                
+                                   
                             }
                         }
+                        .padding()
+                        
                     }
                 }
+                .frame(height: 94)
                 .padding(.horizontal)
                 .padding(.top)
-                .foregroundColor(Color("EasternBlue"))
 
                 GroupBox(label: Text("Resistor Types")) {
                     Section {
@@ -156,22 +206,20 @@ struct ConverterView: View {
                 .foregroundColor(Color("EasternBlue"))
 
             }
-            .navigationTitle("Converter")
-            
             NavigationLink(destination: ResultView()) {
                 ZStack {
-                    Rectangle()
-                        .fill(Color("EasternBlue"))
-                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                        .frame(height: 52)
+                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                        .fill(Color("ConverterBackground"))
+                        .frame(height: 67)
                         .padding(.horizontal)
-
                     Text("Convert")
-                        .font(.headline)
-                        .foregroundColor(.white)
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(Color("ConverterText"))
                 }
             }
             .padding(.bottom)
+            .navigationTitle("Converter")
         }
         .accentColor(Color("EasternBlue"))
     }
