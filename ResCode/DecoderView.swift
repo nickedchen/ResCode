@@ -51,15 +51,16 @@ struct DecoderView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                /* SegmentedPicker to switch between different types of bands */
                 SegmentedPicker("Select number of bands", items: items, selection:$selectedIndex)
                     .padding(.horizontal)
-                    .padding(.vertical)
-                    .frame(height: 40)
+                // .frame(width:UIScreen.main.bounds.width * 0.95)
                 
+                // Resistor model view for displaying band colours
                 ResistorView(selectedIndex: $selectedIndex, digit1: $digit1, digit2: $digit2, digit3: $digit3, multiplier: $multiplier, tolerance: $tolerance, coefficient: coefficient)
-                    .padding(.vertical)
 
                 TabView (selection: $tabSelection){
+                //First page for displaying values
                     LazyVStack {
                         HStack {
                             ResistanceTile()
@@ -73,6 +74,7 @@ struct DecoderView: View {
                     }
                     .tag(0)
                     LazyVStack {
+                //Second page for picking colours and bands
                         PickerTile(Selection: $selection, tabSelection: $tabSelection, bandSelection: $BandSelection, selectedIndex: $selectedIndex, digit1: $digit1, digit2: $digit2, digit3: $digit3, multiplier: $multiplier, tolerance: $tolerance, coefficient: coefficient)
                     }
                     .tag(1)
@@ -84,6 +86,7 @@ struct DecoderView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
+                    // Menu options
                     Menu {
                         Button(role: .destructive, action: {
                         }) {
@@ -100,7 +103,7 @@ struct DecoderView: View {
                         Button(action: {
                             showingSheet.toggle()
                         }) {
-                            Label("Info Sheet", systemImage: "plus")
+                            Label("Colour Table", systemImage: "plus")
                         }
                         .sheet(isPresented: $showingSheet) {
                             NavigationStack {
@@ -119,8 +122,6 @@ struct DecoderView: View {
                 }
             }
             .padding(.bottom)
-            Spacer()
-            
             .navigationTitle("Decoder")
             
         }
@@ -160,8 +161,8 @@ struct ResistorView: View {
             RoundedRectangle(cornerRadius: 25)
                 .frame(height: 150)
                 .foregroundColor(Color("ResistorColor"))
-                .shadow(color: Color("ResistorColor"), radius: 6)
-                .padding(.horizontal)
+                .shadow(color: Color("ResistorColor"), radius: 5)
+                .padding()
             
             HStack(spacing: 20) {
                 switch selectedIndex {
@@ -432,7 +433,7 @@ struct PickerTile: View {
         VStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(.secondarySystemFill))
+                    .fill(Color(.secondarySystemBackground))
                 VStack {
                     HStack{
                         Text("Select Band and Colour")
@@ -486,7 +487,7 @@ struct PickerTile: View {
 //                            .background(
 //                                Material.ultraThin,
 //                               in: RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            )
+//                            )
                     }
                     .padding(.vertical)
                     Spacer()

@@ -15,12 +15,12 @@ public struct SegmentedPicker: View {
     private static let SelectedTextColor: Color = Color(.label)
     private static let TextFont: Font = .system(size: 12)
     private static let SegmentCornerRadius: CGFloat = 20
-    private static let ShadowRadius: CGFloat = 10
+    private static let ShadowRadius: CGFloat = 4
     private static let SegmentXPadding: CGFloat = 16
     private static let SegmentYPadding: CGFloat = 8
     private static let PickerPadding: CGFloat = 4
     
-    private static let AnimationDuration: Double = 0.2
+    private static let AnimationDuration: Double = 0.3
     
     // Stores the size of a segment, used to create the active segment rect
     @State private var segmentSize: CGSize = .zero
@@ -58,7 +58,7 @@ public struct SegmentedPicker: View {
                 ForEach(0..<self.items.count, id: \.self) { index in
                     if #available(iOS 16.0, *) {
                         self.getSegmentView(for: index)
-                            .fontWeight(.bold)
+                            .fontWeight(.semibold)
                     } else {
                         self.getSegmentView(for: index)
                     }
