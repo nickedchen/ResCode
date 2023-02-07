@@ -8,8 +8,10 @@
 import Resistance
 import SwiftUI
 
+//placeholder for future AppStore link
 let url = "https://www.apple.com"
 
+//define cell heights
 extension UIPickerView {
     override open var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height: 240)
@@ -52,10 +54,13 @@ struct CalculatorView: View {
             GeometryReader { geometry in
                 ScrollView {
                     VStack {
-                        Spacer()
                         ZStack{
+                            Rectangle()
+                                .frame(height: 20)
+                                .foregroundColor(.secondary)
                             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                .fill(colorScheme == .dark ? Color("containerColor").opacity(0.5) : Color("AccentColor").opacity(0.5))
+                                .fill(colorScheme == .dark ? Color("ResistorColor").opacity(0.5) : Color("ResistorColor"))
+//                                .shadow(color: Color("ResistorColor"), radius: 3)
                             VStack{
                                 switch selectedType {
                                 case "5":
@@ -382,9 +387,9 @@ struct CalculatorView: View {
                 }
             }
             .scrollDisabled(true)
-            .navigationBarTitle("Decoder")
+            .navigationBarTitle("Calculator")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Button(role: .destructive, action: {
                             digit1 = .white
@@ -408,7 +413,7 @@ struct CalculatorView: View {
                     } label: {
                         Image(systemName: "ellipsis.circle.fill")
                             .symbolRenderingMode(.hierarchical)
-                            .foregroundStyle(Color("AccentColor"))
+                            .foregroundStyle(Color("ResistorColor"))
                             .font(.title2)
                     }
                 }
@@ -419,7 +424,7 @@ struct CalculatorView: View {
                         label: {
                         Label("Colour table", systemImage: "info.circle.fill")
                             .symbolRenderingMode(.hierarchical)
-                            .foregroundStyle(Color("AccentColor"))
+                            .foregroundStyle(Color("ResistorColor"))
                             .font(.title2)
                     }
                     .sheet(isPresented: $showingSheet) {
@@ -436,16 +441,15 @@ struct CalculatorView: View {
                 ZStack {
                     Rectangle()
                         .fill(Color("containerColor"))
-                        .cornerRadius(8)
-                        .frame(height: 52)
+                        .cornerRadius(20)
+                        .frame(height: 60)
                         .padding(.horizontal)
 
-                    Text("Save")
-                        .font(.headline)
+                    Text("Save Configuration")
+                        .fontWeight(.semibold)
                         .foregroundColor(.white)
                 }
             }
-            .padding(.bottom)
         }
     }
 }

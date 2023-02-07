@@ -24,31 +24,33 @@ struct ContentView: View {
        }
 
     var body: some View {
-        TabView(selection: $selectedIndex){
-            DecoderView()
-                .tabItem{
-                    Label("Decoder",systemImage: "lines.measurement.horizontal")
-                }
-                .tag(0)
-                .onAppear(perform: { tabColor = tabColors[0] })
-    
-            ConverterView(resistorData: ResistorData(resistance: "", selectedType: "4", coefficient: "", tolerance: ""))
-                .tabItem{
-                    Label("Converter",systemImage: "arrow.2.squarepath")
-                }
-                .tag(1)
-                .onAppear(perform: { tabColor = tabColors[1] })
-            
-            HistoryView()
-                .tabItem{
-                    Label("LabBook",systemImage: "list.clipboard")
-                }
-                .tag(2)
-                .onAppear(perform: { tabColor = tabColors[2] })
-            
-        }
-        .accentColor(tabColor ?? tabColors[0])
-        .font(.headline)
+        
+        CalculatorView()
+//        TabView(selection: $selectedIndex){
+//            CalculatorView()
+//                .tabItem{
+//                    Label("Decoder",systemImage: "lines.measurement.horizontal")
+//                }
+//                .tag(0)
+//                .onAppear(perform: { tabColor = tabColors[0] })
+//
+//            ConverterView(resistorData: ResistorData(resistance: "", selectedType: "4", coefficient: "", tolerance: ""))
+//                .tabItem{
+//                    Label("Converter",systemImage: "arrow.2.squarepath")
+//                }
+//                .tag(1)
+//                .onAppear(perform: { tabColor = tabColors[1] })
+//
+//            HistoryView()
+//                .tabItem{
+//                    Label("LabBook",systemImage: "list.clipboard")
+//                }
+//                .tag(2)
+//                .onAppear(perform: { tabColor = tabColors[2] })
+//
+//        }
+//        .accentColor(tabColor ?? tabColors[0])
+//        .font(.headline)
     }
 }
 
